@@ -13,4 +13,5 @@ int main()
   cout << *pointer << endl;
   
   return 0;
+  
 }
