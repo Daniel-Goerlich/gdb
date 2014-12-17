@@ -17,30 +17,8 @@ To download and install GDB, click on the following links
 
 #####Starting gdb
 
-To use `gdb` properly, we need a compiled and executable program. If you have not downloaded the test program, `test.cpp`, do so now from the repository under in `src` folder. Once downloaded, so you can get familiarized with GDB.
+To properly use `gdb`, we need a compiled and executable program. If you have not downloaded the test program, `test.cpp`, do so now from the repository under in `src` folder. Once downloaded, so you can get familiarized with GDB.
 
-```
-#include <iostream>
-
-using namespace std;
-
-int main()
-{
-
-int x;
-int y;
-
-cout << "Enter first number" << endl;
-cin >> x;
-cout << "Enter second nunber" << endl;
-cin >> y;
-
-int z = x * y;
-cout << x << " times " << y << " equals " << z << endl;
-
-return 0;
-}
-```
 Now compile `test.cpp` with the following command 
 
 ```
