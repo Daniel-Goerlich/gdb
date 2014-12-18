@@ -324,3 +324,74 @@ Single stepping until exit from function __libc_start_main,
 which has no line number information.
 [Inferior 1 (process 23014) exited normally]
 ```
+Stepping through code line by line eliminates the need to have print statements showing that a specific line has been reached.
+
+The `finish` or `f` command has a similar use as `continue`. `finish` allows you to complete the execution of a function that you have accessed by `step`. `finish` can save you time if you do not want to continue to execute a function line by line.
+
+```
+(gdb) run
+Starting program: /class/classes/dgoer001/gdb/src/a.out
+
+Breakpoint 1, main () at ex3.cpp:20
+20 int x = 0;
+Missing separate debuginfos, use: debuginfo-install glibc-2.12-1.149.el6.x86_64 libgcc-4.4.7-11.el6.x86_64 libstdc++-4.4.7-11.el6.x86_64
+(gdb) s
+22 cout << x << endl;
+(gdb) s
+0
+23 bar(x);
+(gdb) s
+bar (x=0) at ex3.cpp:13
+13 x = x + 1;
+(gdb) finish
+Run till exit from #0 bar (x=0) at ex3.cpp:13
+1
+2
+main () at ex3.cpp:27
+27 return 0;
+(gdb) s
+28 }
+(gdb) s
+0x000000305081ed5d in __libc_start_main () from /lib64/libc.so.6
+(gdb) s
+Single stepping until exit from function __libc_start_main,
+which has no line number information.
+[Inferior 1 (process 21971) exited normally]
+```
+
+The `next` or `n` command applies to functions unlike `step`. If the current line is on a fuction and you use `next`, the entire function will execute and then pause at the following line. Instead of executing line by line through the function.
+
+```
+(gdb) run
+Starting program: /class/classes/dgoer001/gdb/src/a.out
+
+Breakpoint 1, main () at ex3.cpp:20
+20 int x = 0;
+Missing separate debuginfos, use: debuginfo-install glibc-2.12-1.149.el6.x86_64 libgcc-4.4.7-11.el6.x86_64 libstdc++-4.4.7-11.el6.x86_64
+(gdb) n
+22 cout << x << endl;
+(gdb) n
+0
+23 bar(x);
+(gdb) n
+1
+2
+27 return 0;
+(gdb) n
+28 }
+(gdb) n
+0x000000305081ed5d in __libc_start_main () from /lib64/libc.so.6
+(gdb) n
+Single stepping until exit from function __libc_start_main,
+which has no line number information.
+[Inferior 1 (process 21844) exited normally]
+
+```
+
+#####Backtracing
+
+`backtrace` or `bt` prints the current contents of the stack at the current point in the execution of the program. The stack contains a list of processes that are yet to finish executing.
+
+Now download `test2.cpp` from the repository in the `src` folder and compile it. Then run `test2.cpp` through `gdb`.
+
+By running `test2.cpp` in GDB, `step` and `backtrace` work well together. 
