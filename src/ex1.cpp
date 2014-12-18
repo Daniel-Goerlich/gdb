@@ -4,14 +4,16 @@ using namespace std;
 
 int main()
 {
-  int *pointer = NULL;
-  int number = 0;
+  int x;
+  int y;
   
-  *pointer = number;
+  cout << "Enter first number" << endl;
+  cin >> x;
+  cout << "Enter second nunber" << endl;
+  cin >> y;
   
-  // proper output should be 0
-  cout << *pointer << endl;
+  int z = x * y;
+  cout << x << " times " << y << " equals " << z << endl;
   
   return 0;
-  
 }
