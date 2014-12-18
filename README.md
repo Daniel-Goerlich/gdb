@@ -205,10 +205,10 @@ You can also set breakpoints on fuctions. To set breakpoints on fuctions, you ne
 
 Using `break` with the name of a function, will set a breakpoint wherever the name of the function appears in the code.
 
-Now compile `ex2.cpp` and run it through `gdb` with the following command
+Now compile `ex3.cpp` and run it through `gdb` with the following command
 
 ```
-$ g++ -g ex2.cpp
+$ g++ -g ex3.cpp
 $ gdb a.out
 ```
 
@@ -273,7 +273,7 @@ Stepping lets you go through the code of the program so you will be able to narr
 The `next` command runs the next line of the program.
 
 ```
-Breakpoint 1, main () at test.cpp:10
+Breakpoint 1, main () at ex3.cpp:10
 10      cout << "Enter first number" << endl;
 (gdb) next
 Enter first number
