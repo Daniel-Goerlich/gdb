@@ -40,7 +40,7 @@ The `-g` flag enables the program to run inside of `gdb` for debugging.
 Once `ex1.cpp` compiles, you will start `gdb` with
 
 ```
-$ gdb ./a.out
+$ gdb a.out
 ```
 By entering in this command, you now are in the `gdb` debugging program. This command does not run the program but it opens the `a.out` file in `gdb`.
 
@@ -51,15 +51,15 @@ The prompt in `gdb` will look like
 ```
 You can enter commands after the `(gdb)`
 
-#####Running the program
+#####Running Programs
 
-Now you want to run the program in `gdb`. Type `run` or `r` to run the program.
+Now you can to run the program in `gdb`. Type `run` or `r` to run the program.
 
 ```
 (gdb) run
 ```
 
-This runs the `a.out` that was loaded into `gdb` with the `gdb ./a.out` command from the terminal.
+This runs the `a.out` that was loaded into `gdb` with the `gdb a.out` command from the terminal.
 
 ```
 (gdb) run
