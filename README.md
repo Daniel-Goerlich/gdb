@@ -11,7 +11,7 @@ Basic Tutorial for gdb
 
 To download and install `gdb`, click on the following links
 
-[Download gdb](www.gnu.org/software/gdb/download/)
+[Download gdb](http://www.gnu.org/software/gdb/download/)
 
 [How to Install](http://www.tutorialspoint.com/gnu_debugger/installing_gdb.htm)
 
