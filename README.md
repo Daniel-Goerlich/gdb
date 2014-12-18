@@ -49,7 +49,7 @@ The prompt in `gdb` will look like
 ```
 (gdb) 
 ```
-You can enter commands after the `(gdb)`
+You can enter commands after the `(gdb)` prompt.
 
 #####Running Programs
 
