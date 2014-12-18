@@ -212,10 +212,10 @@ You can also set breakpoints on fuctions. To set breakpoints on fuctions, you ne
 
 Using `break` with the name of a function, will set a breakpoint wherever the name of the function appears in the code.
 
-Now compile `ex3.cpp` and run it through `gdb` with the following command
+Now compile `ex2.cpp` and run it through `gdb` with the following command
 
 ```
-$ g++ -g ex3.cpp
+$ g++ -g ex2.cpp
 $ gdb a.out
 ```
 
@@ -283,7 +283,7 @@ The `step` or `s` command allows you to progress through code line by line throu
 (gdb) run
 Starting program: /class/classes/dgoer001/gdb/src/a.out 
 
-Breakpoint 1, main () at ex3.cpp:20
+Breakpoint 1, main () at ex2.cpp:20
 20	  int x = 0;
 Missing separate debuginfos, use: debuginfo-install glibc-2.12-1.149.el6.x86_64 libgcc-4.4.7-11.el6.x86_64 libstdc++-4.4.7-11.el6.x86_64
 (gdb) s
@@ -292,7 +292,7 @@ Missing separate debuginfos, use: debuginfo-install glibc-2.12-1.149.el6.x86_64 
 0
 23	  bar(x);
 (gdb) s
-bar (x=0) at ex3.cpp:13
+bar (x=0) at ex2.cpp:13
 13	  x = x + 1;
 (gdb) s
 14	  cout << x << endl;
@@ -300,10 +300,10 @@ bar (x=0) at ex3.cpp:13
 1
 15	  foo(x);
 (gdb) bt
-#0  bar (x=1) at ex3.cpp:15
-#1  0x0000000000400829 in main () at ex3.cpp:23
+#0  bar (x=1) at ex2.cpp:15
+#1  0x0000000000400829 in main () at ex2.cpp:23
 (gdb) s
-foo (x=1) at ex3.cpp:7
+foo (x=1) at ex2.cpp:7
 7	  x = x + 1;
 (gdb) s
 8	  cout << x << endl;
@@ -311,17 +311,17 @@ foo (x=1) at ex3.cpp:7
 2
 9	}
 (gdb) bt
-#0  foo (x=2) at ex3.cpp:9
-#1  0x00000000004007f2 in bar (x=1) at ex3.cpp:15
-#2  0x0000000000400829 in main () at ex3.cpp:23
+#0  foo (x=2) at ex2.cpp:9
+#1  0x00000000004007f2 in bar (x=1) at ex2.cpp:15
+#2  0x0000000000400829 in main () at ex2.cpp:23
 (gdb) s
-bar (x=1) at ex3.cpp:16
+bar (x=1) at ex2.cpp:16
 16	}
 (gdb) s
-main () at ex3.cpp:27
+main () at ex2.cpp:27
 27	  return 0;
 (gdb) bt
-#0  main () at ex3.cpp:27
+#0  main () at ex2.cpp:27
 (gdb) s
 28	}
 (gdb) s
@@ -339,7 +339,7 @@ The `finish` or `f` command has a similar use as `continue`. `finish` allows you
 (gdb) run
 Starting program: /class/classes/dgoer001/gdb/src/a.out
 
-Breakpoint 1, main () at ex3.cpp:20
+Breakpoint 1, main () at ex2.cpp:20
 20 int x = 0;
 Missing separate debuginfos, use: debuginfo-install glibc-2.12-1.149.el6.x86_64 libgcc-4.4.7-11.el6.x86_64 libstdc++-4.4.7-11.el6.x86_64
 (gdb) s
@@ -348,13 +348,13 @@ Missing separate debuginfos, use: debuginfo-install glibc-2.12-1.149.el6.x86_64 
 0
 23 bar(x);
 (gdb) s
-bar (x=0) at ex3.cpp:13
+bar (x=0) at ex2.cpp:13
 13 x = x + 1;
 (gdb) finish
-Run till exit from #0 bar (x=0) at ex3.cpp:13
+Run till exit from #0 bar (x=0) at ex2.cpp:13
 1
 2
-main () at ex3.cpp:27
+main () at ex2.cpp:27
 27 return 0;
 (gdb) s
 28 }
@@ -372,7 +372,7 @@ The `next` or `n` command applies to functions unlike `step`. If the current lin
 (gdb) run
 Starting program: /class/classes/dgoer001/gdb/src/a.out
 
-Breakpoint 1, main () at ex3.cpp:20
+Breakpoint 1, main () at ex2.cpp:20
 20 int x = 0;
 Missing separate debuginfos, use: debuginfo-install glibc-2.12-1.149.el6.x86_64 libgcc-4.4.7-11.el6.x86_64 libstdc++-4.4.7-11.el6.x86_64
 (gdb) n
@@ -405,7 +405,7 @@ Backtracing at the point of a bug can help isolate the bug, because it narrows i
 (gdb) run
 Starting program: /class/classes/dgoer001/gdb/src/a.out 
 
-Breakpoint 1, main () at ex3.cpp:20
+Breakpoint 1, main () at ex2.cpp:20
 20	  int x = 0;
 Missing separate debuginfos, use: debuginfo-install glibc-2.12-1.149.el6.x86_64 libgcc-4.4.7-11.el6.x86_64 libstdc++-4.4.7-11.el6.x86_64
 (gdb) s
@@ -414,7 +414,7 @@ Missing separate debuginfos, use: debuginfo-install glibc-2.12-1.149.el6.x86_64 
 0
 23	  bar(x);
 (gdb) s
-bar (x=0) at ex3.cpp:13
+bar (x=0) at ex2.cpp:13
 13	  x = x + 1;
 (gdb) s
 14	  cout << x << endl;
@@ -422,10 +422,10 @@ bar (x=0) at ex3.cpp:13
 1
 15	  foo(x);
 (gdb) bt
-#0  bar (x=1) at ex3.cpp:15
-#1  0x0000000000400829 in main () at ex3.cpp:23
+#0  bar (x=1) at ex2.cpp:15
+#1  0x0000000000400829 in main () at ex2.cpp:23
 (gdb) s
-foo (x=1) at ex3.cpp:7
+foo (x=1) at ex2.cpp:7
 7	  x = x + 1;
 (gdb) s
 8	  cout << x << endl;
@@ -433,17 +433,17 @@ foo (x=1) at ex3.cpp:7
 2
 9	}
 (gdb) bt
-#0  foo (x=2) at ex3.cpp:9
-#1  0x00000000004007f2 in bar (x=1) at ex3.cpp:15
-#2  0x0000000000400829 in main () at ex3.cpp:23
+#0  foo (x=2) at ex2.cpp:9
+#1  0x00000000004007f2 in bar (x=1) at ex2.cpp:15
+#2  0x0000000000400829 in main () at ex2.cpp:23
 (gdb) s
-bar (x=1) at ex3.cpp:16
+bar (x=1) at ex2.cpp:16
 16	}
 (gdb) s
-main () at ex3.cpp:27
+main () at ex2.cpp:27
 27	  return 0;
 (gdb) bt
-#0  main () at ex3.cpp:27
+#0  main () at ex2.cpp:27
 (gdb) s
 28	}
 (gdb) s
