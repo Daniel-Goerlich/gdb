@@ -261,6 +261,11 @@ No breakpoints or watchpoints.
 
 To check if the breakpoints where deleted properly, run  `info break`. `info break` displays information on all breakpoints that currently exist. If you deleted the breakpoints properly, `info break` will show that there are no breakpoints.
 
+```
+(gdb) info break
+No breakpoints or watchpoints.
+```
+
 #####Stepping Through Code
 
 Stepping lets you go through the code of the program so you will be able to narrow down the bug in your program.
