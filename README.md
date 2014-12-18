@@ -17,7 +17,7 @@ To download and install `gdb`, click on the following links
 
 #####Starting gdb
 
-To properly use `gdb`, you will need a compiled and executable program, which are in the `src` folder. 
+To use `gdb`, you will need a compiled and executable program, which is located in `src` folder. 
 
 To download the examples from the github repository, run the following command
 
