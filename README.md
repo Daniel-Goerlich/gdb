@@ -237,48 +237,6 @@ To check if the breakpoints where deleted properly, run  `info break`. `info bre
 
 Stepping lets you go through the code of the program so you will be able to narrow down the bug in your program.
 
-The command `list` or `l` list ten lines of code for the current line that you are on.
-
-`list` allows you to view the previous lines to check if the current line is running properly. In addtion, `list` allows you to see upcoming code, so you can anitcipate what you think should happen after the current line of code. Anticipating upcoming results in the code helps you distinguish between your desired results and the actual results.
-
-```
-(gdb) list
-5       {
-6
-7       int x;
-8       int y;
-9
-10      cout << "Enter first number" << endl;
-11      cin >> x;
-12      cout << "Enter second nunber" << endl;
-13      cin >> y;
-14
-(gdb)    
-```
-
-We are on line 10, which is in the middle of the listed ten lines of the code.
-
-If you want to see code around a specific line of code, you would use `list N`, where `N` is the line number.
-
-```
-(gdb) list 5
-1       #include <iostream>
-2       using namespace std;
-3
-4       int main()
-5       {
-6
-7       int x;
-8       int y;
-9
-10      cout << "Enter first number" << endl;
-(gdb)     
-```
-
-Line 5 is in the middle of the listed out lines.
-
-You can also use the `list` command on fuctions. You would type `list nameoffuction`, where `nameoffuction` is the fuction name.
-
 The `next` command runs the next line of the program.
 
 ```
