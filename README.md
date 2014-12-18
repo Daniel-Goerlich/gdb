@@ -147,7 +147,7 @@ You can make multiple breakpoints in the program through `gdb`. To make another 
 (gdb) break 12
 Breakpoint 2 at 0x400957: file test.cpp, line 12.
 ```
-Now there are two breakpoints on `ex1.cpp`. Now run the program from `gdb` by typing `run` in the prompt. This will run the program until breakpoint 2 is reached.
+Now there are two breakpoints on `ex1.cpp`. Now run the program from `gdb` by typing `run` in the prompt. This will run the program until breakpoint 1 is reached.
 
 ```
 (gdb) run
