@@ -355,10 +355,6 @@ which has no line number information.
 
 ```
 
-#####Continue
-
-`continue` or `c` is used to continue the program after reaching a breakpoint. The program will only stop when the program ends or reaches another breakpoint.
-
 #####Quit
 
 To quit `gdb`, all you have to do is type `quit` or `q` in the prompt. It brings you back to your current working directory.
