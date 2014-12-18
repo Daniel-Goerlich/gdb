@@ -66,7 +66,7 @@ Program exited normally.
 
 Another way to run the program though `gdb` is to pass in arguments.
 ```
-r arg1 arg2
+(gdb) r arg1 arg2
 ```
 
 This runs the program with `arg1` and `arg2` as command line parameters.
