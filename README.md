@@ -53,7 +53,7 @@ You can enter commands after the `(gdb)`
 
 #####Running Programs
 
-Now you can to run the program in `gdb`. Type `run` or `r` to run the program.
+Now you can to run the program in `gdb` by typing in `run` or `r`
 
 ```
 (gdb) run
@@ -116,9 +116,10 @@ Notice how the program pauses here at line 10. Line 10 has not been executed yet
 
 This is useful because it prevents other lines of code from executing so that you can inspect the variables and execution of the program.
 
+#####Continue
+
 If you want to continue the program, type in `continue` or `c` in the prompt
  
-
 ```
 (gdb) continue
 Continuing.
