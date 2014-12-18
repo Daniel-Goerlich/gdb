@@ -90,7 +90,14 @@ To exit out of `gdb`, all you have to do is type `quit` or `q` in the prompt. It
 (gdb) quit
 ```
 
-#####Finding Segfaults
+#####Automatic Segfault Detection
+
+`gdb` is capable of automatically detecting segfaults. This is demonstrated by `gdb` with the following link. 
+
+[Automatic Segfault Detection](segfault_detection/)
+
+However, `gdb` cannot automatically locate all segfaults. If `gdb` does not find the segfault for you, use the `gdb` to find the segfault like any other bug.
+
 
 
 #####Breakpoints and Continue
