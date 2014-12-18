@@ -45,4 +45,14 @@ int main()
     return 0;
 }
 ```
+
+```
+(gdb) run
+Starting program: /class/classes/dgoer001/gdb/src/a.out 
+0
+[Inferior 1 (process 35008) exited normally]
+Missing separate debuginfos, use: debuginfo-install glibc-2.12-1.149.el6.x86_64 libgcc-4.4.7-11.el6.x86_64 libstdc++-4.4.7-11.el6.x86_64
+
+```
+
 As you can see, `gdb`was able to point out the location of the segfault, therefore making the debugging process a lot easier.
