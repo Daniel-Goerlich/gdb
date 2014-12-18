@@ -1,6 +1,6 @@
 ###Automatic Segfault Detection
 
-In this examplel, compile `segfault.cpp` and run it through `gdb` with the following command
+In this example, compile `segfault.cpp` and run it through `gdb` with the following command
 
 ```
 $ g++ -g segfault.cpp
@@ -20,7 +20,9 @@ Missing separate debuginfos, use: debuginfo-install glibc-2.12-1.149.el6.
 x86_64 libgcc-4.4.7-11.el6.x86_64 libstdc++-4.4.7-11.el6.x86_64
 ```
 
-`gdb` found `segfault` at `line 10`
+The great thing about `gdb` is that it can automatically locate segfaults.
+
+As you can see, `gdb` has found a segfault in `segfault.cpp`at `line 10`
 
 To fix it, change `line 10` to be the following.
 
