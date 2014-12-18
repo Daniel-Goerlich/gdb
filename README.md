@@ -139,7 +139,7 @@ Continuing.
 Enter first number
 ```
 
-By typing in `continue` in the prompt, the program will execute from the breakpoint, which is line 10. The program executes line 11, which is `Enter first number`.
+The `continue` command will execute the program from the breakpoint, which is line 10. Once the `continue` command is ran, the program will execute line 11, which is `Enter first number`.
 
 You can make multiple breakpoints in the program through `gdb`. To make another breakpoint in the program, type `breakpoint` followed by the line number or at the name of a function. By setting another breakpoint, you are able to pause at another line in the program.
 
