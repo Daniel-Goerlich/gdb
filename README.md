@@ -381,10 +381,6 @@ which has no line number information.
 [Inferior 1 (process 28909) exited normally]
 
 ```
-#####Print
-
-
-`print` or `p` prints of the contents of a specific variable in the program
 
 #####Continue
 
