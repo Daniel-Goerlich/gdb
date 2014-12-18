@@ -158,7 +158,7 @@ Breakpoint 1, main () at test.cpp:10
 10      cout << "Enter first number" << endl;
 (gdb)
 ```
-The program paused at `Breakpoint 1`, which is the first breakpoint. To continue on to the next breakpoint, type `continue` in the prompt. The program will continue until the next breakpoint, which is on line 12.
+The program pauses at `Breakpoint 1`, which is the first breakpoint. To continue on to the next breakpoint, type `continue` in the prompt. The program will continue until the next breakpoint, which is on line 12.
 
 ```
 (gdb) run
