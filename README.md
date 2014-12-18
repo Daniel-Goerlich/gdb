@@ -17,16 +17,27 @@ To download and install `gdb`, click on the following links
 
 #####Starting gdb
 
-To properly use `gdb`, we need a compiled and executable program. If you have not downloaded the test program, `test.cpp`, do so now from the repository under in `src` folder. Once downloaded, so you can get familiarized with `gdb`.
+To properly use `gdb`, you will need a compiled and executable program, which are in the `src` folder. 
 
-Now compile `test.cpp` with the following command 
+To download the examples from the github repository, run the following command
 
 ```
-$ g++ -g test.cpp
+$ git clone https://github.com/Daniel-Goerlich/gdb.git
+```
+
+Once downloaded, change directory into the `src` folder by running the following command
+
+```
+$ cd gdb/src
+```
+Now compile `ex1.cpp` with the following command 
+
+```
+$ g++ -g ex1.cpp
 ```
 The `-g` flag enables the program to run inside of `gdb` for debugging. 
 
-Once `test.cpp` compiles, we will start `gdb` with
+Once `ex1.cpp` compiles, you will start `gdb` with
 
 ```
 $ gdb ./a.out
