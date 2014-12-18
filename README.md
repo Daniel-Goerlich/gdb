@@ -292,6 +292,9 @@ bar (x=0) at ex3.cpp:13
 (gdb) s
 1
 15	  foo(x);
+(gdb) bt
+#0  bar (x=1) at ex3.cpp:15
+#1  0x0000000000400829 in main () at ex3.cpp:23
 (gdb) s
 foo (x=1) at ex3.cpp:7
 7	  x = x + 1;
@@ -300,12 +303,18 @@ foo (x=1) at ex3.cpp:7
 (gdb) s
 2
 9	}
+(gdb) bt
+#0  foo (x=2) at ex3.cpp:9
+#1  0x00000000004007f2 in bar (x=1) at ex3.cpp:15
+#2  0x0000000000400829 in main () at ex3.cpp:23
 (gdb) s
 bar (x=1) at ex3.cpp:16
 16	}
 (gdb) s
 main () at ex3.cpp:27
 27	  return 0;
+(gdb) bt
+#0  main () at ex3.cpp:27
 (gdb) s
 28	}
 (gdb) s
@@ -313,138 +322,5 @@ main () at ex3.cpp:27
 (gdb) s
 Single stepping until exit from function __libc_start_main,
 which has no line number information.
-[Inferior 1 (process 21819) exited normally]
-```
-
-Stepping through code line by line eliminates the need to have print statements showing that a specific line has been reached.
-
-The `finish` or `f` command has a similar use as `continue`. `finish` allows you to complete the execution of a function that you have accessed by `step`. `finish` can save you time if you do not want to continue to execute a function line by line.
-
-```
-(gdb) run
-Starting program: /class/classes/dgoer001/gdb/src/a.out 
-
-Breakpoint 1, main () at ex3.cpp:20
-20	  int x = 0;
-Missing separate debuginfos, use: debuginfo-install glibc-2.12-1.149.el6.x86_64 libgcc-4.4.7-11.el6.x86_64 libstdc++-4.4.7-11.el6.x86_64
-(gdb) s
-22	  cout << x << endl;
-(gdb) s
-0
-23	  bar(x);
-(gdb) s
-bar (x=0) at ex3.cpp:13
-13	  x = x + 1;
-(gdb) finish
-Run till exit from #0  bar (x=0) at ex3.cpp:13
-1
-2
-main () at ex3.cpp:27
-27	  return 0;
-(gdb) s
-28	}
-(gdb) s
-0x000000305081ed5d in __libc_start_main () from /lib64/libc.so.6
-(gdb) s
-Single stepping until exit from function __libc_start_main,
-which has no line number information.
-[Inferior 1 (process 21971) exited normally]
-```
-
-The `next` or `n` command applies to functions unlike `step`. If the current line is on a fuction and you use `next`, the entire function will execute and then pause at the following line. Instead of executing line by line through the function.
-
-```
-(gdb) run
-Starting program: /class/classes/dgoer001/gdb/src/a.out 
-
-Breakpoint 1, main () at ex3.cpp:20
-20	  int x = 0;
-Missing separate debuginfos, use: debuginfo-install glibc-2.12-1.149.el6.x86_64 libgcc-4.4.7-11.el6.x86_64 libstdc++-4.4.7-11.el6.x86_64
-(gdb) n
-22	  cout << x << endl;
-(gdb) n
-0
-23	  bar(x);
-(gdb) n
-1
-2
-27	  return 0;
-(gdb) n
-28	}
-(gdb) n
-0x000000305081ed5d in __libc_start_main () from /lib64/libc.so.6
-(gdb) n
-Single stepping until exit from function __libc_start_main,
-which has no line number information.
-[Inferior 1 (process 21844) exited normally]
-
-```
-
-
-
-#####Backtracing
-
-`backtrace` or `bt` prints the current contents of the stack at the current point in the execution of the program. The stack contains a list of processes that are yet to finish executing.
-
-Now download `test2.cpp` from the repository in the `src` folder and compile it. Then run `test2.cpp` through `gdb`.
-
-By running `test2.cpp` in GDB, `step` and `backtrace` work well together. 
-
-```
-
-(gdb) run
-Starting program: /class/classes/dgoer001/./a.out 
-
-Breakpoint 1, main () at test.cpp:18
-warning: Source file is more recent than executable.
-18		cout << "test1" << endl;
-Missing separate debuginfos, use: debuginfo-install glibc-2.12-1.149.el6.x86_64 libgcc-4.4.7-11.el6.x86_64 libstdc++-4.4.7-11.el6.x86_64
-(gdb) s
-test1
-19		bar();
-(gdb) s
-bar () at test.cpp:12
-12		cout << "test2" << endl;
-(gdb) backtrace
-#0  bar () at test.cpp:12
-#1  0x000000000040081e in main () at test.cpp:19
-(gdb) s
-test2
-13		foo();
-(gdb) s
-foo () at test.cpp:7
-7		cout << "test3" << endl;
-(gdb) bt
-#0  foo () at test.cpp:7
-#1  0x00000000004007f7 in bar () at test.cpp:13
-#2  0x000000000040081e in main () at test.cpp:19
-(gdb) s
-test3
-8	}
-(gdb) bt
-#0  foo () at test.cpp:8
-#1  0x00000000004007f7 in bar () at test.cpp:13
-#2  0x000000000040081e in main () at test.cpp:19
-(gdb) s
-bar () at test.cpp:14
-14	}
-(gdb) bt
-#0  bar () at test.cpp:14
-#1  0x000000000040081e in main () at test.cpp:19
-(gdb) s
-main () at test.cpp:20
-20		return 0;
-(gdb) bt
-#0  main () at test.cpp:20
-(gdb) s
-21	}
-(gdb) bt
-#0  main () at test.cpp:21
-(gdb) s
-0x000000305081ed5d in __libc_start_main () from /lib64/libc.so.6
-(gdb) s
-Single stepping until exit from function __libc_start_main,
-which has no line number information.
-[Inferior 1 (process 28909) exited normally]
-
+[Inferior 1 (process 23014) exited normally]
 ```
