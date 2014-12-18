@@ -82,6 +82,14 @@ Another way to run the program though `gdb` is to pass in arguments.
 
 This runs the program with `arg1` and `arg2` as command line parameters.
 
+#####Quit
+
+To quit `gdb`, all you have to do is type `quit` or `q` in the prompt. It brings you back to your current working directory.
+
+```
+(gdb) quit
+```
+
 #####Finding Segfaults
 
 
@@ -358,12 +366,4 @@ Single stepping until exit from function __libc_start_main,
 which has no line number information.
 [Inferior 1 (process 28909) exited normally]
 
-```
-
-#####Quit
-
-To quit `gdb`, all you have to do is type `quit` or `q` in the prompt. It brings you back to your current working directory.
-
-```
-(gdb) quit
 ```
