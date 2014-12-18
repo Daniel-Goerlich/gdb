@@ -447,4 +447,8 @@ which has no line number information.
 [Inferior 1 (process 23014) exited normally]
 ```
 
+######Conclusion
+
+The examples in this tutorial covered `run`, `quit`, `breakpoint`, `info break`, `backtrace`, `delete`, `continue`, `step`, `next`,and `finish`. In addition, you have seen how `gdb` automatically found `segfaults`.
+
 By working with these examples, you will be able to debug your future programs more efficiently rather than going through your code, line by line, and trying to find bugs manually. You will save time by using `gdb`.
