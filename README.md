@@ -82,9 +82,9 @@ Another way to run the program though `gdb` is to pass in arguments.
 
 This runs the program with `arg1` and `arg2` as command line parameters.
 
-#####Quit
+#####Exiting Out of gdb
 
-To quit `gdb`, all you have to do is type `quit` or `q` in the prompt. It brings you back to your current working directory.
+To exit out of `gdb`, all you have to do is type `quit` or `q` in the prompt. It brings you back to your current working directory.
 
 ```
 (gdb) quit
