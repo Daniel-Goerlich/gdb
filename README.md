@@ -272,16 +272,115 @@ Stepping lets you go through the code of the program so you will be able to narr
 
 The `step` or `s` command allows you to progress through the code line by line. `step` will continue running the code line by line through the function until the function ends. After the function finishes, `step` will go back to the next line after the fuction call in the main body of the code and will continue to run the code line by line.
 
+```
+(gdb) run
+Starting program: /class/classes/dgoer001/gdb/src/a.out 
+
+Breakpoint 1, main () at ex3.cpp:20
+20	  int x = 0;
+Missing separate debuginfos, use: debuginfo-install glibc-2.12-1.149.el6.x86_64 libgcc-4.4.7-11.el6.x86_64 libstdc++-4.4.7-11.el6.x86_64
+(gdb) s
+22	  cout << x << endl;
+(gdb) s
+0
+23	  bar(x);
+(gdb) s
+bar (x=0) at ex3.cpp:13
+13	  x = x + 1;
+(gdb) s
+14	  cout << x << endl;
+(gdb) s
+1
+15	  foo(x);
+(gdb) s
+foo (x=1) at ex3.cpp:7
+7	  x = x + 1;
+(gdb) s
+8	  cout << x << endl;
+(gdb) s
+2
+9	}
+(gdb) s
+bar (x=1) at ex3.cpp:16
+16	}
+(gdb) s
+main () at ex3.cpp:27
+27	  return 0;
+(gdb) s
+28	}
+(gdb) s
+0x000000305081ed5d in __libc_start_main () from /lib64/libc.so.6
+(gdb) s
+Single stepping until exit from function __libc_start_main,
+which has no line number information.
+[Inferior 1 (process 21819) exited normally]
+```
+
 Stepping through code line by line eliminates the need to have lines that print out statements showing that a specific line has been reached or the printing the contents of a variable. 
 
 The `finish` or `f` command has a similar use as `continue`. `finish` allows you to complete the execution of a function that you have accessed by `step`. `finish` can save you time if you do not want to continue to run a function line by line.
 
+```
+(gdb) run
+Starting program: /class/classes/dgoer001/gdb/src/a.out 
+
+Breakpoint 1, main () at ex3.cpp:20
+20	  int x = 0;
+Missing separate debuginfos, use: debuginfo-install glibc-2.12-1.149.el6.x86_64 libgcc-4.4.7-11.el6.x86_64 libstdc++-4.4.7-11.el6.x86_64
+(gdb) s
+22	  cout << x << endl;
+(gdb) s
+0
+23	  bar(x);
+(gdb) s
+bar (x=0) at ex3.cpp:13
+13	  x = x + 1;
+(gdb) finish
+Run till exit from #0  bar (x=0) at ex3.cpp:13
+1
+2
+main () at ex3.cpp:27
+27	  return 0;
+(gdb) s
+28	}
+(gdb) s
+0x000000305081ed5d in __libc_start_main () from /lib64/libc.so.6
+(gdb) s
+Single stepping until exit from function __libc_start_main,
+which has no line number information.
+[Inferior 1 (process 21971) exited normally]
+```
+
 The `next` command runs the next line of the program.
 
 ```
+(gdb) run
+Starting program: /class/classes/dgoer001/gdb/src/a.out 
+
+Breakpoint 1, main () at ex3.cpp:20
+20	  int x = 0;
+Missing separate debuginfos, use: debuginfo-install glibc-2.12-1.149.el6.x86_64 libgcc-4.4.7-11.el6.x86_64 libstdc++-4.4.7-11.el6.x86_64
+(gdb) n
+22	  cout << x << endl;
+(gdb) n
+0
+23	  bar(x);
+(gdb) n
+1
+2
+27	  return 0;
+(gdb) n
+28	}
+(gdb) n
+0x000000305081ed5d in __libc_start_main () from /lib64/libc.so.6
+(gdb) n
+Single stepping until exit from function __libc_start_main,
+which has no line number information.
+[Inferior 1 (process 21844) exited normally]
 
 ```
-The `next` or `n` command also applies to functions. If the current line is on a fuction and you use `next`, the entire function will execute and then pause at the following line. Instead of executing line by line of the function.
+
+The `next` or `n` command also applies to functions unlike `step`. If the current line is on a fuction and you use `next`, the entire function will execute and then pause at the following line. Instead of executing line by line of the function.
 
 #####Backtracing
 
