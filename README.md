@@ -47,8 +47,8 @@ Now you want to run the program in `gdb`. Type `run` or `r` to run the program.
 ```
 (gdb) run
 ```
-Remember that the commands go after the `(gdb)`.
-This runs the `a.out` that was loaded into gdb with the `gdb ./a.out` command from the terminal.
+
+This runs the `a.out` that was loaded into `gdb` with the `gdb ./a.out` command from the terminal.
 
 ```
 (gdb) run
@@ -122,7 +122,7 @@ You can make multiple breakpoints in the program through `gdb`. To make another 
 (gdb) break 12
 Breakpoint 2 at 0x400957: file test.cpp, line 12.
 ```
-Now there are two breakpoints in `test.cpp` through GDB. Now run the program from `gdb` by typing `run` in the prompt. This will run the program until breakpoint 2 is reached.
+Now there are two breakpoints in `test.cpp` through `gdb`. Now run the program from `gdb` by typing `run` in the prompt. This will run the program until breakpoint 2 is reached.
 
 ```
 (gdb) run
