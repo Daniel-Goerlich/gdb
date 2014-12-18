@@ -446,3 +446,5 @@ Single stepping until exit from function __libc_start_main,
 which has no line number information.
 [Inferior 1 (process 23014) exited normally]
 ```
+
+By working with these examples, you will be able to debug your future programs more efficiently rather than going through your code, line by line, and trying to find bugs manually. You will save time by using `gdb`.
