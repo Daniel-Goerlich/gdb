@@ -268,9 +268,9 @@ No breakpoints or watchpoints.
 
 #####Stepping Through Code
 
-Stepping lets you go through the code of the program so you will be able to narrow down the bug in your program.
+Stepping throught your code lets you narrow down the bug(s) in your program.
 
-The `step` or `s` command allows you to progress through the code line by line. `step` will continue running the code line by line through the function until the function ends. After the function finishes, `step` will go back to the next line after the fuction call in the main body of the code and will continue to run the code line by line.
+The `step` or `s` command allows you to progress through code line by line through the main body of code and functions until the program ends.
 
 ```
 (gdb) run
@@ -316,9 +316,9 @@ which has no line number information.
 [Inferior 1 (process 21819) exited normally]
 ```
 
-Stepping through code line by line eliminates the need to have lines that print out statements showing that a specific line has been reached or the printing the contents of a variable. 
+Stepping through code line by line eliminates the need to have print statements showing that a specific line has been reached.
 
-The `finish` or `f` command has a similar use as `continue`. `finish` allows you to complete the execution of a function that you have accessed by `step`. `finish` can save you time if you do not want to continue to run a function line by line.
+The `finish` or `f` command has a similar use as `continue`. `finish` allows you to complete the execution of a function that you have accessed by `step`. `finish` can save you time if you do not want to continue to execute a function line by line.
 
 ```
 (gdb) run
@@ -351,7 +351,7 @@ which has no line number information.
 [Inferior 1 (process 21971) exited normally]
 ```
 
-The `next` command runs the next line of the program.
+The `next` or `n` command applies to functions unlike `step`. If the current line is on a fuction and you use `next`, the entire function will execute and then pause at the following line. Instead of executing line by line through the function.
 
 ```
 (gdb) run
@@ -380,7 +380,7 @@ which has no line number information.
 
 ```
 
-The `next` or `n` command also applies to functions unlike `step`. If the current line is on a fuction and you use `next`, the entire function will execute and then pause at the following line. Instead of executing line by line of the function.
+
 
 #####Backtracing
 
