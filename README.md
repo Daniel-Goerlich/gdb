@@ -71,6 +71,9 @@ r arg1 arg2
 
 This runs the program with `arg1` and `arg2` as command line parameters.
 
+#####Finding Segfaults
+
+
 #####Breakpoints
 
 You can create breakpoints in `gdb`. A breakpoint causes a pause (break) in the program when it reaches a certain point.
