@@ -392,9 +392,7 @@ which has no line number information.
 
 `backtrace` or `bt` prints the current contents of the stack at the current point in the execution of the program. The stack contains a list of processes that are yet to finish executing.
 
-Now download `test2.cpp` from the repository in the `src` folder and compile it. Then run `test2.cpp` through `gdb`.
-
-By running `test2.cpp` in GDB, `step` and `backtrace` work well together. 
+Backtracing at the point of a bug can help isolate the bug, because it narrows it down to the function or the line that caused the bug. 
 
 ```
 (gdb) run
