@@ -9,7 +9,7 @@ Basic Tutorial for gdb
 #####gdb Download
 
 
-To download and install `gdb`, click on the following links
+To download and learn how to install `gdb`, click on the following links
 
 [Download gdb](http://www.gnu.org/software/gdb/download/)
 
