@@ -270,41 +270,18 @@ No breakpoints or watchpoints.
 
 Stepping lets you go through the code of the program so you will be able to narrow down the bug in your program.
 
-The `next` command runs the next line of the program.
-
-```
-Breakpoint 1, main () at ex3.cpp:10
-10      cout << "Enter first number" << endl;
-(gdb) next
-Enter first number
-11      cin >> x;
-(gdb) next
-2
-12      cout << "Enter second nunber" << endl;
-(gdb) next
-Enter second nunber
-13      cin >> y;
-(gdb) next
-7
-15      int z = x * y;
-(gdb) next
-16      cout << x << " times " << y << " equals " << z << endl;
-(gdb) next
-2 times 7 equals 14
-18      return 0;
-(gdb) next
-19      }
-(gdb) 
-```
-The program continued off of breakpoint 1, which is line 10. The `next` command steps through the program one line at a time.
-
-The `next` or `n` command also applies to functions. If the current line is on a fuction and you use `next`, the entire function will execute and then pause at the following line. Instead of executing line by line of the function.
-
-The `step` or `s` command has a similar use as `next`. `step` allows you to progress through the code line by line just like `next`. However, `step` runs the function line by line unlike `next`. `step` will continue running the code line by line through the function until the function ends. After the function finishes, `step` will go back to the next line after the fuction call in the main body of the code and will continue to run the code line by line.
+The `step` or `s` command allows you to progress through the code line by line. `step` will continue running the code line by line through the function until the function ends. After the function finishes, `step` will go back to the next line after the fuction call in the main body of the code and will continue to run the code line by line.
 
 Stepping through code line by line eliminates the need to have lines that print out statements showing that a specific line has been reached or the printing the contents of a variable. 
 
-The `finish` or `f` command has a similar use as `run`. `finish` allows you to complete the execution of a function that you have accessed by `step`. `finish` can save you time if you do not want to continue to run a function line by line.
+The `finish` or `f` command has a similar use as `continue`. `finish` allows you to complete the execution of a function that you have accessed by `step`. `finish` can save you time if you do not want to continue to run a function line by line.
+
+The `next` command runs the next line of the program.
+
+```
+
+```
+The `next` or `n` command also applies to functions. If the current line is on a fuction and you use `next`, the entire function will execute and then pause at the following line. Instead of executing line by line of the function.
 
 #####Backtracing
 
