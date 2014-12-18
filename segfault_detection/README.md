@@ -45,7 +45,7 @@ int main()
     return 0;
 }
 ```
-
+`gdb` will run the new `segfault.cpp` with no problem.
 ```
 (gdb) run
 Starting program: /class/classes/dgoer001/gdb/src/a.out 
