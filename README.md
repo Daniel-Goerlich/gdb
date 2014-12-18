@@ -24,7 +24,7 @@ Now compile `test.cpp` with the following command
 ```
 $ g++ -g test.cpp
 ```
-The `-g` flag enables the program to be run with `gdb`. The `-g` allow the usage of `gdb` for debugging and can track the uses variables and fuctions in `gdb`.
+The `-g` flag enables the program to run inside of `gdb` for debugging. 
 
 Once `test.cpp` compiles, we will start `gdb` with
 
