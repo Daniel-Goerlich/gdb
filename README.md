@@ -108,7 +108,7 @@ Breakpoints stop the program before executing the line number.
 
 To create breakpoints, type `break` or `b` in the `gdb` prompt followed by the line number that you want to pause (break) at.
 
-In addition, breakpoints can be set at a specific line by entering a phrase instead of a line number. When a phrase is passed in GDB, it will put a breakpoint where the phrase is found in the code.
+In addition, breakpoints can be set at a specific line by entering a function name instead of a line number. When a function name is passed in GDB, it will put a breakpoint where the function name is found in the code.
 
 ```
 (gdb) break 10
