@@ -1,5 +1,5 @@
-Basic guide for gdb
-===================
+Basic Tutorial for gdb
+======================
 
 #####What is gdb?
 
