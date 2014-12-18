@@ -204,13 +204,13 @@ Num     Type           Disp Enb Address            What
 (gdb) 
 ```
 
-You can also set breakpoints on fuctions. To set breakpoints on fuctions, you need to type out the name of the fuction right after `break`
+You can also set breakpoints on fuctions. To set breakpoints on fuctions, you will need to type out the name of the fuction right after `break`
 
 ```
 (gdb) break nameofthefuction
 ```
 
-Using `break` with the name of a function, will set a breakpoint wherever the name of the function appears in the code.
+Using `break` with the name of a function, will set a breakpoint wherever the name of the function appears in the program.
 
 Now compile `ex2.cpp` and run it through `gdb` with the following command
 
@@ -255,7 +255,7 @@ test3
 ```
 
 
-To remove all the breakpoints, type `delete` or `d` into the prompt of `gdb`. Then it will ask if you want to delete all the breakpoints. Type `y` for yes or `n` for no.
+The `delete` or `d` command removes all the breakpoints which you have created. Type `delete` or `d` into the prompt of `gdb`. Then it will ask if you want to delete all the breakpoints. Type `y` for yes or `n` for no.
 
 ```
 (gdb) delete
@@ -266,7 +266,7 @@ No breakpoints or watchpoints.
 ```
 
 
-To check if the breakpoints where deleted properly, run  `info break`. `info break` displays information on all breakpoints that currently exist. If you deleted the breakpoints properly, `info break` will show that there are no breakpoints.
+To check if the breakpoints where deleted properly, run  `info break`. `info break` displays information on all breakpoints that currently exist. After you deleted all the breakpoints, `info break` will show that there are no breakpoints remaining.
 
 ```
 (gdb) info break
@@ -277,7 +277,7 @@ No breakpoints or watchpoints.
 
 Stepping through your code lets you narrow down the bug(s) in your program.
 
-The `step` or `s` command allows you to progress through code line by line through the main body of code and functions until the program ends.
+The `step` or `s` command allows you to progress through code, line by line through the main body of code and functions until the program ends.
 
 ```
 (gdb) run
@@ -331,9 +331,9 @@ Single stepping until exit from function __libc_start_main,
 which has no line number information.
 [Inferior 1 (process 23014) exited normally]
 ```
-Stepping through code line by line eliminates the need to have print statements showing that a specific line has been reached.
+Stepping through the code eliminates the need to have print statements showing a specific line that has been reached.
 
-The `finish` or `f` command has a similar use as `continue`. `finish` allows you to complete the execution of a function that you have accessed by `step`. `finish` can save you time if you do not want to continue to execute a function line by line.
+The `finish` or `f` command has a similar use as `continue`. However, `finish` allows you to complete the execution of a function that you have already accessed by `step`. `finish` can save you time if you do not want to continue to execute a function line by line.
 
 ```
 (gdb) run
@@ -366,7 +366,7 @@ which has no line number information.
 [Inferior 1 (process 21971) exited normally]
 ```
 
-The `next` or `n` command applies to functions unlike `step`. If the current line is on a fuction and you use `next`, the entire function will execute and then pause at the following line. Instead of executing line by line through the function.
+The `next` or `n` command applies to functions, unlike `step`. If the current line is on a fuction and you use `next`, the entire function will execute and then pause at the following line, instead of executing line by line through the function.
 
 ```
 (gdb) run
